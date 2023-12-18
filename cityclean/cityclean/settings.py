@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
 
+
+    'report',
+    
     # allauth
     'django.contrib.sites',
     'allauth',
@@ -65,6 +68,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
