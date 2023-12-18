@@ -127,6 +127,9 @@ venv.bak/
 pythonenv*
 .ppk
 
+
+picture/
+
 # Spyder project settings
 .spyderproject
 .spyproject
