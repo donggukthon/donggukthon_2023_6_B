@@ -13,7 +13,7 @@ class DeclarationView(APIView):
         data = json.loads(request.body.decode('utf-8'))
         
         # Read And Validate User, TrashCan
-        user = User.objects.get(id=1)
+        user = User.objects.get(id=1) ###
         trashCans = TrashCans.objects.get(id=data['trashCanId'])
         declarations = Declaration.objects.filter(user=user, trashCans=trashCans)
         

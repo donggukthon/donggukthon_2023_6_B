@@ -16,12 +16,12 @@ class TrashCanCreateView(APIView):
 class TrashCanListView(APIView):
     def get(self, request):
         # 유저 1이 작성한 쓰레기통만 필터링
-        trash_cans_queryset = TrashCans.objects.filter(user=1)
+        trash_cans_queryset = TrashCans.objects.filter(user=1) ###
         serializer = TrashCanListSerializer(trash_cans_queryset, many=True)
         return Response(serializer.data)
 
 class TrashCansView(APIView):
     def get(self, request):
-        trash_cans_queryset = TrashCan.objects.all()
+        trash_cans_queryset = TrashCans.objects.all()
         serializer = TrashCansListSerializer(trash_cans_queryset, many=True)
         return Response(serializer.data)

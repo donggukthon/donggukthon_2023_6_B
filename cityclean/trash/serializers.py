@@ -9,7 +9,7 @@ class TrashListSerializer(serializers.ModelSerializer):
         fields = ['id', 'address', 'picture', 'information']
 
     def create(self, validated_data):
-        user = User.objects.get(id=1)
+        user = User.objects.get(id=1) ###
 
 class TrashSerializer(serializers.ModelSerializer):
     class Meta:
