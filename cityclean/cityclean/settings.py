@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'user',
     'report',
+    'declaration',
     
     # allauth
     'django.contrib.sites',
