@@ -25,3 +25,17 @@ class TrashListView(APIView):
         trash_queryset = Trash.objects.all()
         serializer = TrashListsSerializer(trash_queryset, many=True)
         return Response(serializer.data)
+
+class DeletetrashView(APIView):
+    def get_object(self, pk):
+        try:
+            return Trash.objects.get(pk=pk)
+        except Trash.DoesNotExist:
+            return None
+
+    def delete(self, request, pk):
+        trash = self.get_object(pk)
+        if trash:
+            trash.delete()
+            return Response({'message': 'Trash deleted'})
+        return Response({'message': 'Trash not found'}, status=404)
