@@ -22,5 +22,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('report/', include('report.urls')),
     path('declaration/', include('declaration.urls')),
-#    path('complaint/', include('complaint.urls')),
+    path('complaint/', include('complaint.urls')),
 ]

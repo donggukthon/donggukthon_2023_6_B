@@ -1,7 +1,7 @@
 from django.db import models
 from user.models import User
 
-class trashCans(models.Model):
+class Trash(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=255)
     latitude = models.FloatField()
