@@ -1,13 +1,16 @@
 from rest_framework import serializers
 from .models import Declaration
 from user.models import User
-from report.models import trashCans
+from report.models import TrashCans
+from datetime import datetime
 
 class DeclarationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Declaration
-        fields = '__all__'
+        exclude = ['user', 'trashCans', 'created_at']
 
     def create(self, validated_data):
-        user = User.objects.get(pk=1)
-        trashCans = trashCans.objects.get(pk=1)
+        user = self.context['user']
+        trashCans = self.context['trashCans']
+        
+        return Declaration.objects.create(user=user, trashCans=trashCans, created_at=datetime.now(), **validated_data)
