@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'user',
-    'report',
+    'trashcan',
     'declaration',
-    'complaint',
+    'trash',
     
     # allauth
     'django.contrib.sites',
