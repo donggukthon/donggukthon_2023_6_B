@@ -5,7 +5,7 @@ from user.models import User
 class TrashCanListSerializer(serializers.ModelSerializer):
     class Meta:
         model = trashCans
-        fields = ['id', 'address', 'picture', 'information', 'complaincount',]
+        fields = ['id', 'address', 'picture', 'information']
 
     def create(self, validated_data):
         user = User.objects.get(pk=1)
