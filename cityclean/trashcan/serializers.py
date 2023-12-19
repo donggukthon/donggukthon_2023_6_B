@@ -18,7 +18,7 @@ class TrashCanSerializer(serializers.ModelSerializer):
         exclude = ['user']
         
     def create(self, validated_data):
-        user = User.objects.get(id=1)
+        user = User.objects.get(id=1) ###
         trashcan = TrashCans.objects.create(
             address=validated_data['address'],
             picture=validated_data['picture'],
