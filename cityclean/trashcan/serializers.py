@@ -33,7 +33,7 @@ class TrashCanSerializer(serializers.ModelSerializer):
 class TrashCansListSerializer(serializers.ModelSerializer):
     class Meta:
         model = TrashCans
-        fields = ['id', 'latitude', 'longitude']
+        fields = ['id', 'address', 'picture', 'latitude', 'longitude']
 
     def create(self, validated_data):
         user = User.objects.get(id=1)

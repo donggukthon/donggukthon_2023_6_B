@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Trash
-from .serializers import TrashListSerializer, TrashSerializer
+from .serializers import TrashListSerializer, TrashSerializer,TrashListsSerializer
 
 class TrashCreateView(APIView):
 
@@ -18,4 +18,10 @@ class TrashsView(APIView):
     def get(self, request):
         trash_queryset = Trash.objects.all()
         serializer = TrashListSerializer(trash_queryset, many=True)
+        return Response(serializer.data)
+
+class TrashListView(APIView):
+    def get(self, request):
+        trash_queryset = Trash.objects.all()
+        serializer = TrashListsSerializer(trash_queryset, many=True)
         return Response(serializer.data)

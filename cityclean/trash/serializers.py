@@ -27,3 +27,11 @@ class TrashSerializer(serializers.ModelSerializer):
             user=user
         )
         return trash
+
+class TrashListsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Trash
+        fields = ['id', 'address', 'picture', 'latitude', 'longitude']
+
+    def create(self, validated_data):
+        user = User.objects.get(id=1) ###
