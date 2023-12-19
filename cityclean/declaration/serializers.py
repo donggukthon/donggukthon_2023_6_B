@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Declaration
 from user.models import User
-from report.models import TrashCans
+from trashcan.models import TrashCans
 from datetime import datetime
 
 class DeclarationSerializer(serializers.ModelSerializer):

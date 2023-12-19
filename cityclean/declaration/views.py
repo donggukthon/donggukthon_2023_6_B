@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from .models import Declaration
 from .serializers import DeclarationSerializer
 from user.models import User
-from report.models import TrashCans
+from trashcan.models import TrashCans
 
 class DeclarationView(APIView):
     def post(self, request):
